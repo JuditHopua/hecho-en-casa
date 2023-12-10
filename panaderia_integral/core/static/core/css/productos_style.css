@@ -1,0 +1,337 @@
+.seccion_productos {
+   width: 95%;
+   margin: 0;
+}
+
+.h1-gallery {
+    font-size: 2.5em;
+    padding: 1.5rem;
+    color: rgb(69, 28, 13);
+    text-align: center;
+    margin: 0;
+}
+
+.gallery {
+    padding-inline: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap: 2rem;
+    width: 100%;
+}
+ 
+.gallery-items {
+    display: flex;
+    gap: 6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+ 
+.gallery-card {
+    width: 25%;
+    min-width: 25%;
+    height: 270px;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 500ms ease;
+}
+ 
+.gallery-card:hover,
+ .gallery-card:focus-within {
+    transform: scale(1.15);
+}
+
+.card {
+   background-size: cover;  
+   background-position: center; 
+}
+ 
+.card-content {
+    padding: 1.5rem;
+    padding: var(--padding);
+    line-height: 1.6;
+    background: linear-gradient(
+       rgba(0, 0, 0, 0),
+       rgba(0, 0, 0, 0.2) 10%,
+       rgba(0, 0, 0, 0.8)
+    );
+    transform: translateY(150%);
+    border-radius: 10px;
+ }
+  
+@media screen and (max-width: 1300px) {
+    .gallery {
+        padding-inline: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .gallery-card {
+        width: 30%;
+        min-width: 25%;
+    }
+
+    @media (hover) {
+        .card-content {
+           transform: translateY(200%);
+           transition: transform 500ms ease;
+        }
+  
+        .gallery-card:hover .card-content,
+        .gallery-card:focus-within .card-content {
+           transform: translateY(90%);
+        }
+  
+        .gallery-card:focus-within .card-content {
+           transition-duration: 0ms;
+        }
+  
+        .card-content > *:not(.card-title) {
+           opacity: 0;
+           transition: opacity 500ms linear;
+        }
+  
+        .gallery-card:hover .card-content > *:not(.card-title),
+        .gallery-card:focus-within .card-content > *:not(.card-title) {
+           opacity: 1;
+        }
+  
+        .card-title::after {
+           transform: scaleX(0);
+        }
+    }
+
+    .card-title {
+        position: relative;
+        width: 100%;
+        color:white;
+        padding-left: 10px;
+        font-size: 1.3em;
+    }
+  
+    .card-title::after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: calc(100% + var(--padding));
+        background-color: var(--color-accent);
+        left: calc(var(--padding) * -1);
+        transform-origin: left;
+        transition: transform 500ms ease;
+        font-size: 1em;
+    }
+     
+    .card-text {
+         color:white;
+         width: auto;
+         padding-left: 10px;
+         font-size: 0.8em;
+    }
+
+    .gallery-card:hover .card-title::after, .gallery-card:focus-within .card-title::after {
+        transform: scaleX(1);
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .gallery {
+        padding-inline: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .gallery-card {
+        width: 40%;
+        min-width: 25%;
+    }
+
+    @media (hover) {
+        .gallery-card:hover .card-content,
+        .gallery-card:focus-within .card-content {
+           transform: translateY(90%);
+        }
+  
+        .gallery-card:focus-within .card-content {
+           transition-duration: 0ms;
+        }
+  
+        .card-content > *:not(.card-title) {
+           opacity: 0;
+           transition: opacity 500ms linear;
+        }
+  
+        .gallery-card:hover .card-content > *:not(.card-title),
+        .gallery-card:focus-within .card-content > *:not(.card-title) {
+           opacity: 1;
+        }
+  
+        .card-title::after {
+           transform: scaleX(0);
+        }
+    }
+
+    .card-title {
+        position: relative;
+        width: 100%;
+        color:white;
+        padding-left: 10px;
+        font-size: 1.3em;
+    }
+  
+    .card-title::after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: calc(100% + var(--padding));
+        background-color: var(--color-accent);
+        left: calc(var(--padding) * -1);
+        transform-origin: left;
+        transition: transform 500ms ease;
+        font-size: 1em;
+    }
+     
+    .card-text {
+         color:white;
+         width: auto;
+         padding-left: 10px;
+         font-size: 0.8em;
+    }
+
+    .gallery-card:hover .card-title::after, .gallery-card:focus-within .card-title::after {
+        transform: scaleX(1);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .gallery {
+        padding-inline: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .gallery-card {
+       width: 100%;
+       min-width: 25%;
+    }
+
+    @media (hover) {
+        .gallery-card:hover .card-content,
+        .gallery-card:focus-within .card-content {
+           transform: translateY(90%);
+        }
+  
+        .gallery-card:focus-within .card-content {
+           transition-duration: 0ms;
+        }
+  
+        .card-content > *:not(.card-title) {
+           opacity: 0;
+           transition: opacity 500ms linear;
+        }
+  
+        .gallery-card:hover .card-content > *:not(.card-title),
+        .gallery-card:focus-within .card-content > *:not(.card-title) {
+           opacity: 1;
+        }
+  
+        .card-title::after {
+           transform: scaleX(0);
+        }
+    }
+  
+    .card-title {
+        position: relative;
+        width: 100%;
+        color:white;
+        padding-left: 10px;
+        font-size: 1.3em;
+    }
+  
+    .card-title::after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: calc(100% + var(--padding));
+        background-color: var(--color-accent);
+        left: calc(var(--padding) * -1);
+        transform-origin: left;
+        transition: transform 500ms ease;
+        font-size: 1em;
+    }
+     
+    .card-text {
+         color:white;
+         width: auto;
+         padding-left: 10px;
+         font-size: 0.8em;
+    }
+
+    .gallery-card:hover .card-title::after, .gallery-card:focus-within .card-title::after {
+        transform: scaleX(1);
+    }
+}
+
+.card-title {
+    position: relative;
+    width: 100%;
+    color:white;
+    padding-left: 10px;
+    font-size: 1.3em;
+}
+
+.card-title::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: calc(100% + var(--padding));
+    background-color: var(--color-accent);
+    left: calc(var(--padding) * -1);
+    transform-origin: left;
+    transition: transform 500ms ease;
+    font-size: 1em;
+}
+ 
+.card-text {
+     color:white;
+     width: auto;
+     padding-left: 10px;
+     font-size: 0.8em;
+}
+
+.gallery-card:hover .card-title::after,
+     .gallery-card:focus-within .card-title::after {
+        transform: scaleX(1);
+}
+
+.gallery-card:hover .card-content,
+.gallery-card:focus-within .card-content {
+   transform: translateY(90%);
+}
+
+.gallery-card:focus-within .card-content {
+   transition-duration: 0ms;
+}
+
+.card-content > *:not(.card-title) {
+   opacity: 0;
+   transition: opacity 500ms linear;
+}
+
+.gallery-card:hover .card-content > *:not(.card-title),
+.gallery-card:focus-within .card-content > *:not(.card-title) {
+   opacity: 1;
+}
+
+.card-title::after {
+   transform: scaleX(0);
+}

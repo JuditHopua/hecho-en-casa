@@ -1,0 +1,74 @@
+section {
+    width: auto;
+    height: auto;
+}
+
+.grid-container text-center {
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    padding: 0;
+}
+
+.col-12 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: rgb(69, 28, 13);
+}
+
+.quienes_somos {
+    text-align: justify;
+}
+
+#carouselExampleAutoplaying {
+    width: 80%;
+    padding-left: 25%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 1.3em;
+}
+
+.mision-vision {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.mision {
+    flex-basis: 45%;
+    margin-bottom: 15px;
+    border: 1px;
+    text-align: justify;
+}
+
+.vision {
+    flex-basis: 45%;
+    text-align: justify;
+    margin-bottom: 15px;
+    border: 1px;
+}
+
+@media screen and (max-width: 470px) {
+    h2 {
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+
+    #carouselExampleAutoplaying {
+        width: 100%;
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,107 @@
+.contenido {
+    width: auto;
+    display: grid;
+    margin: 0;
+    grid-template-columns: repeat(1,1fr);
+    padding: 0;
+}
+
+.seccion-consejo1{
+    min-height: 20%;
+    padding: 3%;
+    color: rgb(69, 28, 13);
+}
+
+.contenido .seccion-consejo1 .texto-encabezado h1 {
+    font-size: 2.5em;
+    color: rgb(69, 28, 13);
+    text-align: center;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.contenido .seccion-consejo1 .texto-encabezado h4 {
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.contenido .seccion-consejo1 img {
+    width: 35%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+ }
+
+ .contenido .seccion-consejo1 .cuerpo-encabezado {
+    font-size: 1.2em;
+    text-align: justify;
+ }
+
+.seccion-consejo2, .seccion-consejo4 {
+    background-color: rgb(221, 165, 74);
+}
+
+.video {
+    padding-top: 5px;
+}
+
+iframe {
+    width: 530px;
+    height: 298px;
+    margin: auto;
+}
+
+.seccion-consejo2, .seccion-consejo4, .seccion-consejo3 {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    place-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+.texto {
+    font-size: 1em;
+    color: rgb(69, 28, 13);
+    text-align: justify;
+    padding-left: 10px;
+    padding-right:10px;
+}
+ 
+@media screen and (max-width: 798px) {
+    .contenido .seccion-consejo1 .texto-encabezado h1 {
+        font-size: 2em;
+    }
+    .contenido .seccion-consejo1 img {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+        border-radius: 10px;
+     }
+    
+    .seccion-consejo2, .seccion-consejo4, .seccion-consejo3 {
+        width: auto;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        place-content: center;
+        place-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    .video {
+        padding-top: 0;
+    }
+
+    iframe {
+        width: auto;
+        height: 298px;
+        margin: auto;
+        min-width: 270px;
+    }
+}

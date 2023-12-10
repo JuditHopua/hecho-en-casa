@@ -1,0 +1,321 @@
+html, body {
+    margin: 0 0.5rem;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    min-width: 260px;
+}
+
+body {
+    background-color: rgb(255, 255, 255)
+}
+
+.encabezado {
+    background-color: rgb(239, 217, 172);
+    min-width: 240px;
+}
+
+/* Desarrollo de estilos de la barra superior con información de la panaderia*/
+
+.encabezado .info_de_la_panaderia ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+.encabezado .info_de_la_panaderia ul li {
+    padding: 1rem 2rem 0 2rem;
+    background-color: rgb(239, 217, 172);
+    font-size: 1rem;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.encabezado .info_de_la_panaderia ul li a {
+    color: rgb(221, 165, 74);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.encabezado .info_de_la_panaderia ul li a:hover {
+    color: rgb(69, 28, 13);
+}
+
+.encabezado .info_de_la_panaderia ul .pull_right {
+    display:flex;
+    margin-left: auto;
+    flex-wrap: wrap;
+}
+
+/* Se distribuyen los enlaces a derecha en las líneas de abajo cuando la pantalla del dispositivo se reduce 620px */
+
+@media screen and (max-width: 710px) {
+    .encabezado .info_de_la_panaderia ul .pull_right {
+        margin: 0;
+    }  
+}
+
+/* Desarrollo de estilos de la linea divisoria */
+
+.encabezado .linea {
+    border-top: 1px solid rgb(221, 165, 74);
+    height: 2px;
+    min-width: 200px;
+    padding: 0;
+    margin: 1rem auto 0 auto;
+}
+
+/* Desarrollo de estilos de la barra de navegación principal */
+
+.navegacion_principal {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: auto;
+    gap: 1em;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(239, 217, 172);
+}
+
+/* Se distribuyen los enlaces y el logo de la barra de navegación principal en tres lineas para que sean más visibles y queden bien 
+presentados cuando la pantalla del dispositivo se reduce 759 px */
+
+@media screen and (max-width: 760px) {
+    .navegacion_principal {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5em;
+    }
+    .navegacion_principal .enlace1, .navegacion_principal .enlace2, .navegacion_principal .enlace3 {
+    grid-row: 1;
+    }
+    .navegacion_principal .logo {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+    .navegacion_principal .icono_logo {
+        width: 20%;
+        height: 20%;
+    }
+    .navegacion_principal .enlace4, .navegacion_principal .enlace5, .navegacion_principal .enlace6 {
+        grid-row: 3;
+    }
+    .navegacion_principal .enlace4 {
+        grid-column: 1;
+    }
+    .navegacion_principal .enlace5 {
+        grid-column: 2;
+    }
+    .navegacion_principal .enlace6 {
+        grid-column: 3;
+    }
+}
+
+/* Se alinean verticalmente enlaces y logo de la barra de navegación principal cuando la pantalla del dispositivo se reduce 370 px */
+
+@media screen and (max-width: 370px) {
+    .navegacion_principal {
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        gap: 0.5em;
+    }
+    .navegacion_principal .enlace1, .navegacion_principal .enlace2, .navegacion_principal .enlace3, .navegacion_principal .logo, .navegacion_principal .enlace4, .navegacion_principal .enlace5, .navegacion_principal .enlace6 {
+        grid-column: 1;
+    }
+    .navegacion_principal .enlace1 {
+        grid-row: 1;
+    }
+    .navegacion_principal .enlace2 {
+        grid-row: 2;
+    } 
+    .navegacion_principal .enlace3 {
+        grid-row: 3;
+    } 
+    .navegacion_principal .logo {
+        grid-row: 4;
+    }
+    .navegacion_principal .enlace4 {
+        grid-row: 5;
+    }
+    .navegacion_principal .enlace5 {
+        grid-row: 6;
+    }
+    .navegacion_principal .enlace6 {
+        grid-row: 7;
+    }
+    .navegacion_principal .icono_logo {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.enlace1 {
+    grid-column: 1;
+}
+
+.enlace2 {
+    grid-column: 2;
+}
+  
+.enlace3 {
+    grid-column: 3;
+}
+  
+.logo {
+    grid-column: 4;
+}
+
+.icono_logo {
+    width: 90%;
+    height: 90%;
+    transition: all 0.3s;
+}
+
+.icono_logo:hover {
+    transform: scale(1.2) ;
+}
+
+.enlace4 {
+    grid-column: 5;
+}
+
+.enlace5 { 
+    grid-column: 6;
+}
+
+.enlace6 {  
+    grid-column: 7;
+}
+
+.enlaces_nav, .sin_enlace {
+    color: rgb(69, 28, 13);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.enlaces_nav:hover {
+    color:  rgb(221, 165, 74);
+    border-bottom: 1px solid rgb(221, 165, 74);
+}
+
+.sin_enlace { 
+    pointer-events: none;
+    cursor: default;
+}
+
+.sin_enlace:hover {
+    text-decoration: none;
+}
+
+/* Desarrollo de estilos del submenú de Panadería*/
+
+.enlace2:hover .desplegable {
+    display: flex;
+    flex-direction: column;
+}
+
+.submenu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.enlace2 .desplegable {
+    display: none;
+    list-style:none; 
+}
+
+.enlace_desplegable {
+    text-decoration: none;
+    color: rgb(69, 28, 13);
+}
+
+.enlace_desplegable:hover {
+    color:  rgb(221, 165, 74);
+    border-bottom: 1px solid rgb(221, 165, 74);
+}
+
+/* pie de página */
+
+.pie {
+    background-color: rgb(69, 28, 13);
+    color: rgb(239, 217, 172);
+    text-align: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+}
+
+.footer-logo {
+    text-align: center; 
+}
+
+.footer-logo #icono_logo_footer {
+    width: 50%;
+    height: 50%; 
+    margin-top: 0.7em;
+}
+
+.footer-logo .redes-sociales ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;  
+}
+
+.footer-logo .redes-sociales ul li {
+    padding: 0.7rem;
+    font-size: 1.5em;
+    margin-left: 1%;
+    flex-wrap: wrap;
+}
+
+.footer-logo .redes-sociales ul li a {
+    color: rgb(221, 165, 74);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.footer-logo .redes-sociales ul li a:hover{
+    color: rgb(239, 217, 172);  
+}
+
+.footer-info {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-info .p_footer-info {
+    font-size: 1.2em;
+}
+
+.footer-rights {
+    padding: 0 0 0.3em 0;
+}
+
+.copyright {
+    font-size: 1em;
+}
+
+ /* flecha para volver arriba */
+
+.up {
+    position: fixed;
+    bottom: 15px;
+    right:15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(221, 165, 74);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(69, 28, 13);
+    border: 1px solid rgb(69, 28, 13);
+    cursor: pointer;
+}

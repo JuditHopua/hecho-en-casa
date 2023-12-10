@@ -1,0 +1,233 @@
+#seccion_pedidos {
+    width: 100%;
+    margin: 0;
+ }
+ 
+ h1 {
+    font-size: 2.5em;
+    padding: 1.5rem;
+    color: rgb(69, 28, 13);
+    text-align: center;
+    margin: 0;
+ }
+ 
+ .contenedor_pedidos {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+ }
+  
+.form_pedidos {
+    width: 100%;
+}
+
+ .items_contenedor {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+ }
+  
+ .card_contenedor {
+    width: 45%;
+    min-width: 45%;
+    height: auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: rgb(69, 28, 13);
+    font-size: 1.2rem;  
+ }
+
+.pedido_producto {
+    display:grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 10px;
+    padding: 5px;
+    text-align: left;
+}
+
+fieldset {
+    border-radius: 10px;
+    border-color: rgb(69, 28, 13);
+    background-color: rgb(239, 217, 172);
+}
+
+legend {
+    font-size: 1.5rem;
+}
+
+.pedido_producto input {
+    width: 50%;
+    border: 0.5px solid rgb(69, 28, 13);
+    border-radius: 5px;
+    color: rgb(69, 28, 13);
+}
+
+.card_contenedor_large {
+    width: 92%;
+    min-width: 25%;
+    height: auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: rgb(69, 28, 13);
+    font-size: 1.2rem;  
+ }
+ 
+.pedido_promo {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr 0.5fr);
+    padding: 0;
+    margin: 0;
+}
+
+.pedido_promo input {
+    width: 100%;
+    border: 0.5px solid rgb(69, 28, 13);
+    border-radius: 5px;
+    color: rgb(69, 28, 13);
+    justify-self: left;
+    padding: 0;
+    margin: 0;
+    margin-right: 1em;
+}
+
+.pedido_promo label {
+    padding: 0;
+    margin: 0.2em;
+    text-align: right;
+}
+
+.despacho {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    margin: 0; 
+    text-align: left;
+}
+
+.card_contenedor_despacho {
+    width: 46%;
+    min-width: 25%;
+    height: auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: rgb(69, 28, 13);
+    font-size: 1.2rem;  
+}
+
+.card_contenedor_despacho input {
+    width: 100%;
+    padding: 0;
+    margin: 5px;
+    border: 0.5px solid rgb(69, 28, 13);
+    border-radius: 5px;
+    color: rgb(69, 28, 13);
+}
+
+.pedido_contacto {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    padding: 0;
+    margin: 0; 
+    text-align: left;
+}
+
+.card_contenedor_contacto {
+    width: 46%;
+    min-width: 25%;
+    height: auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: rgb(69, 28, 13);
+    font-size: 1.2rem;  
+}
+
+.card_contenedor_contacto input {
+    width: 100%;
+    padding:0;
+    margin: 0.2em;
+    border: 0.5px solid rgb(69, 28, 13);
+    border-radius: 5px;
+    color: rgb(69, 28, 13);
+}
+
+.card_contenedor_contacto label {
+    padding:0;
+    margin-right:0;
+}
+
+input {
+    outline: none;
+}
+
+input:focus{
+    border: 2px solid rgb(221, 165, 74);
+}
+
+#retira_local, #delivery {
+    accent-color: rgb(221, 165, 74);
+}
+
+.enviar {
+    width: auto;
+    background-color: rgb(221, 165, 74);
+    color:rgb(69, 28, 13);
+    border: 1px solid rgb(69, 28, 13);
+    border-radius: 10px;
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+@media screen and (max-width: 760px) {
+    .card_contenedor, .card_contenedor_despacho, .card_contenedor_contacto  {
+        width: 90%;
+    }
+
+    .pedido_promo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr 1fr);
+        padding: 0;
+        margin: 0;
+        column-gap: 0.3em;
+    }
+
+    .pedido_promo label {
+        text-align: left;
+    }
+
+    .pedido_promo input {
+        margin: 0.2em;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .card_contenedor, .card_contenedor_large {
+        width: 50%;
+    }
+
+    .pedido_producto {
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 5px;
+        text-align: left;
+        margin-left: 10%;
+    }
+
+    .pedido_promo {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin: 0;
+        padding-left: 20%;
+    }
+
+    .pedido_promo input {
+        width: 50%;
+        
+    }
+}

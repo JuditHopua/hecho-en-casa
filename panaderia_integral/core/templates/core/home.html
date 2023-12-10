@@ -1,0 +1,74 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<figure id="imagen_panes" style="background-image: url('{% static 'core/img/index/panes_integrales.png' %}')"></figure>
+    <section id="panaderia">
+        <h4>Panadería integral</h4>
+        <h6>Nuestros productos</h6>
+    </section>
+    <section id="nuestros_productos">
+        <article class="productos">
+            <a href="{% url 'panes' %}" id="panes" style="background-image: url('{% static 'core/img/index/panes.png' %}')"></a>
+            <h6>Panes</h6>
+        </article>
+        <article class="productos">
+            <a href="{% url 'budines' %}" id="budines" style="background-image: url('{% static 'core/img/index/budin_integral_de_naranja_y_miel.png' %}')"></a>   
+            <h6>Budines</h6>
+        </article>
+        <article class="productos">
+            <a href="{% url 'galletitas' %}" id="galletitas" style="background-image: url('{% static 'core/img/index/galletitas_de_avena_chocolate_y_mandarina.png' %}')"></a>   
+            <h6>Galletitas</h6>
+        </article>
+        <article class="productos">
+            <a href="{% url 'facturas' %}" id="facturas" style="background-image: url('{% static 'core/img/index/facturas.png' %}')"></a>   
+            <h6>Facturas</h6>
+        </article>
+        <article class="productos">
+            <a href="{% url 'tartas' %}" id="tartas" style="background-image: url('{% static 'core/img/index/tarta_integral.png' %}')"></a> 
+            <h6>Tartas</h6>  
+        </article>
+        <article class="productos">
+            <a href="{% url 'pizzas' %}" id="pizzas" style="background-image: url('{% static 'core/img/index/pizza_de_la_casa.png' %}')"></a>   
+            <h6>Pizzas</h6>
+        </article>
+    </section>
+    <div class="linea_oscura"></div>
+    <section id="seccion_spot_pedidos">
+        <div class="spot_pedidos">
+            <div class="texto_spot_pedidos">
+                <p>Realizá tu pedido online y te enviamos el presupuesto.</p>
+                <p>¡También podés pedir delivery y te lo llevamos a tu casa!</p>
+            </div>
+            <div id="item_pedidos">
+                <a href="{% url 'pedidos' %}" id="enlace_boton_pedidos"><img src="{% static 'core/img/index/canasta_pan.png' %}" alt="pedidos" id="img_pedidos"></a>
+            </div>
+        </div>
+    </section>
+    <div class="linea_oscura"></div>
+    <section>
+        <div class="promo_redes_sociales">
+            <div>
+                <img src="{% static 'core/img/index/Animaciones_redes_sociales.gif' %}" alt="promo-halloween" id="promo_halloween">
+            </div>
+        </div>
+    </section>
+    <div class="linea_ocre"></div>
+    <section>
+        <div class="informacion_saludable">
+            <div class="texto_consejos">
+                <div id="texto_consejos1">
+                    <p>Razones que te convencerán para pasarte a los alimentos integrales</p>
+                </div>
+                <div id="imagen_consejos">
+                    <a href="{% url 'consejos' %}"><img src="{% static 'core/img/consejos/panes.png' %}" alt="panes" id="img_consejos"></a>
+                </div>
+                <div id="texto_consejos_2">
+                    <p>Descubrí cómo los alimentos integrales te ayudarán a tu salud.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="linea_ocre"></div>
+{% endblock %}

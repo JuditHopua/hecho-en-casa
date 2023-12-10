@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}Hecho en casa</title>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/index_style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/promos_style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/pedidos_style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/productos_style.css' %}"> 
+    <link rel="stylesheet" href="{% static 'core/css/donde_nos_encontras_style.css' %}"> 
+    <link rel="stylesheet" href="{% static 'core/css/consejos_style.css' %}"> 
+    <link rel="stylesheet" href="{% static 'core/css/contacto_style.css' %}"> 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'core/js/funciones.js' %}"></script>
+    <link rel="icon" href="{% static 'core/img/logo/Croissant.ico' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@1,500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2067fe5f8f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="encabezado">
+        <nav class="info_de_la_panaderia">
+            <ul>
+                <li><a href="https://www.facebook.com/profile.php?id=61552365612376" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/hechoencasa.panaderia.ok/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a></li>
+                <li><a href="https://wa.me/542983405504/?text=Necesito%20realizar%20una%20consulta" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+                <div class="pull_right">
+                    <li><a href="{% url 'quienes_somos' %}">Quiénes somos</a></li> 
+                    <li><a href="{% url 'donde_nos_encontras' %}">Dónde nos encontrás</a></li>
+                </div>
+            </ul>
+        </nav>
+        <div class="linea"></div>
+        <nav class="navegacion_principal">
+            <div class="enlace1">
+                <a href="{% url 'home' %}" class="enlaces_nav">Inicio</a>
+            </div>
+            <div class="enlace2">
+                <a href="#" class="sin_enlace">Panaderia</a>
+                <div class="submenu">
+                    <ul class="desplegable">
+                        <li><a href="{% url 'panes' %}" class="enlace_desplegable">Panes</a></li>
+                        <li><a href="{% url 'budines' %}" class="enlace_desplegable">Budines</a></li>
+                        <li><a href="{% url 'galletitas' %}" class="enlace_desplegable">Galletitas</a></li>
+                        <li><a href="{% url 'facturas' %}" class="enlace_desplegable">Facturas</a></li>
+                        <li><a href="{% url 'tartas' %}" class="enlace_desplegable">Tartas</a></li>
+                        <li><a href="{% url 'pizzas' %}" class="enlace_desplegable">Pizzas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="enlace3">
+                <a href="{% url 'promos' %}" class="enlaces_nav">Promos</a>
+            </div>
+            <div class="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'core/img/logo/Hecho_en_casa.ico' %}" class="icono_logo" alt="Logo de la panadería integral Hecho en casa"></a>
+            </div>
+            <div class="enlace4">
+                <a href="{% url 'pedidos' %}" class="enlaces_nav">Pedidos</a>
+            </div>
+            <div class="enlace5">
+                <a href="{% url 'consejos' %}" class="enlaces_nav">Consejos</a>
+            </div>
+            <div class="enlace6">
+                <a href="{% url 'contacto' %}" class="enlaces_nav">Contacto</a>
+            </div>
+        </nav> 
+    </header>  
+    <div class="up">
+        <span class="icon icon-up-open"></span>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <footer class="pie">
+        <div class="footer-content">
+            <div></div>
+            <div class="footer-logo">
+                <img src="{% static 'core/img/logo/Hecho_en_casa.ico' %}" alt="logo" id="icono_logo_footer">
+                <nav class="redes-sociales">
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=61552365612376" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/hechoencasa.panaderia.ok/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a></li>
+                        <li><a href="https://wa.me/542983405504/?text=Necesito%20realizar%20una%20consulta" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div></div>
+            <div class="footer-info">
+                <p>Dirección: Monroe 1431. CABA</p>
+                <p>Lu a Vie de 10:30am a 8:30pm</p>
+                <p>Sábados de 10:30am a 8:00pm</p>
+            </div>
+            <div></div>
+        </div>
+        <div class="footer-rights">
+            <p class="copyright">@2023 Hecho En Casa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

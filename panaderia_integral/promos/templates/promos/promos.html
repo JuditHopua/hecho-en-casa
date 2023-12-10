@@ -1,0 +1,56 @@
+{% extends "core/base.html" %}
+
+{% block title %}Promos - {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<section id="seccion_promos">
+    <div>
+        <h1 id="titulo_promos">Conoce nuestros combos para eventos</h1>
+    </div>
+    {% if promociones %}
+        
+            <div id="contenedor_promos">
+            {% for promocion in promociones %}
+                {% if promocion.position == 1 %}
+                    <article>
+                    <div class="contenedor_producto">
+                        <div class="texto_promo">
+                            <div class="titulo_producto"><h3>{{promocion.name}}</h3></div>
+                            <p class="piezas">{{promocion.description}}</p>
+                            <ul>
+                                <li class="item_promo">{{promocion.product1}}</li>
+                                <li class="item_promo">{{promocion.product2}}</li>
+                                <li class="item_promo">{{promocion.product3}}</li>
+                                <li class="item_promo">{{promocion.product4}}</li>
+                            </ul>
+                        </div>
+                        <div><img src="{{promocion.image.url}}" alt="{{promocion.name}}" class="img_promos"></div>
+                    </div>
+                    </article>
+                {% else %}
+                    <article>
+                        <div class="contenedor_producto">
+                            <div><img src="{{promocion.image.url}}" alt="{{promocion.name}}" class="img_promos"></div>
+                            <div class="texto_promo">
+                                <div class="titulo_producto"><h3>{{promocion.name}}</h3></div>
+                                <p class="piezas">{{promocion.description}}</p>
+                                <ul>
+                                    <li class="item_promo">{{promocion.product1}}</li>
+                                    <li class="item_promo">{{promocion.product2}}</li>
+                                    <li class="item_promo">{{promocion.product3}}</li>
+                                    <li class="item_promo">{{promocion.product4}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                {% endif %}
+            {% endfor %} 
+            </div>
+           
+    {% else %}
+        <h1>No hay promociones disponibles</h1>
+    {% endif %}
+</section>  
+{% endblock %}  

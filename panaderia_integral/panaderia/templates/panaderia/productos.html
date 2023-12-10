@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+
+{% block title %}{{categoria}} - {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<section class="seccion_productos">
+   <div>
+      <h1 class="h1-gallery">{{categoria}}</h1>
+   <div>  
+   <div class="gallery">
+      <div class="gallery-items">
+         {% for producto in productos %} 
+            <div class="gallery-card card" style="background-image: url('{{producto.image.url}}')" alt="{producto.title}">
+               <div class="card-content">
+                  <h2 class="card-title">{{producto.name}}</h2>
+                  <p class="card-text">{{producto.description}}</p>
+               </div>
+            </div>
+         {% endfor %}
+      </div>    
+    </div>
+ </section>
+{% endblock %}  

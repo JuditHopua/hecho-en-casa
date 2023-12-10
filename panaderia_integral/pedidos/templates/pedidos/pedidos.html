@@ -1,0 +1,128 @@
+{% extends "core/base.html" %}
+
+{% block title %}Pedidos - {% endblock %}
+
+{% block content %}
+<section id="seccion_pedidos">
+    <h1>Pedidos</h1>
+    <div class="contenedor_pedidos">
+        <form action="{% url 'home' %}" method="post" name="form_valida_pedido" class="form_pedidos">
+            {% csrf_token %}
+            <div class="items_contenedor">
+                <div class="card_contenedor">
+                    <fieldset>
+                        <legend>Panes</legend>
+                        {% for pan in panes %}
+                            <div class="pedido_producto">
+                                <label for="{{pan.name}}">{{pan.name}}</label>
+                                <input type="number" name="{{pan.name}}" id="{{pan.id}}" value="0" min="0" max="99" autofocus>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                </div>
+                <div class="card_contenedor">
+                    <fieldset>
+                        <legend>Budines</legend>
+                        {% for budin in budines %}
+                            <div class="pedido_producto">
+                                <label for="{{budin.name}}">{{budin.name}}</label>
+                                <input type="number" name="{{budin.name}}" id="{{budin.id}}" value="0" min="0" max="99" autofocus>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                </div>
+                <div class="card_contenedor">
+                    <fieldset>
+                        <legend>Galletitas</legend>
+                        {% for galletita in galletitas %}
+                            <div class="pedido_producto">
+                                <label for="{{galletita.name}}">{{galletita.name}}</label>
+                                <input type="number" name="{{galletita.name}}" id="{{galletita.id}}" value="0" min="0" max="99" autofocus>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                </div>
+                <div class="card_contenedor">
+                    <fieldset>
+                        <legend>Facturas</legend>
+                        {% for factura in facturas %}
+                            <div class="pedido_producto">
+                                <label for="{{factura.name}}">{{factura.name}}</label>
+                                <input type="number" name="{{factura.name}}" id="{{factura.id}}" value="0" min="0" max="99" autofocus>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                </div>
+                <div class="card_contenedor">
+                    <fieldset>
+                        <legend>Tartas</legend>
+                        {% for tarta in tartas %}
+                            <div class="pedido_producto">
+                                <label for="{{tarta.name}}">{{tarta.name}}</label>
+                                <input type="number" name="{{tarta.name}}" id="{{tarta.id}}" value="0" min="0" max="99" autofocus>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                </div>
+                <div class="card_contenedor">
+                    <fieldset>
+                        <legend>Pizzas</legend>
+                        {% for pizza in pizzas %}
+                            <div class="pedido_producto">
+                                <label for="{{pizzas.name}}">{{pizzas.name}}</label>
+                                <input type="number" name="{{pizzas.name}}" id="{{pizzas.id}}" value="0" min="0" max="99" autofocus>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                </div>
+                <div class="card_contenedor_large">
+                    <fieldset>
+                        <legend>Promos</legend>
+                        
+                            <div class="pedido_promo">
+                                {% for promo in promos %}
+                                <label for="{{promo.name}}">{{promo.name}}</label>
+                                <input type="number" name="{{promo.name}}" id="{{promo.id}}" value="0" min="0" max="99" autofocus>
+                                {% endfor %}
+                            </div>
+                        
+                    </fieldset>
+                </div>
+                <div class="card_contenedor_despacho">
+                    <fieldset>
+                        <legend>Despacho del pedido</legend>
+                        <div class="despacho">
+                            <label for="retira_local">Retira del local</label>
+                            <input type="radio" name="forma_despacho" id="retira_local" checked>
+                            <label for="delivery">Delivery</label>
+                            <input type="radio" name="forma_despacho" id="delivery">
+                            <label for="fecha_despacho_pedido">El pedido deberá entregarse...</label>
+                            <input name="fecha_despacho_pedido" type="date" id="fecha_despacho_pedido" required>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="card_contenedor_contacto">
+                    <fieldset>
+                        <legend>Datos de contacto</legend>
+                        <div class="pedido_contacto">
+                            <label for="nombre">Nombre</label>
+                            <input name="nombre" type="text" placeholder="Nombre..." maxlength="50" required>
+                        </div>
+                        <div class="pedido_contacto">
+                            <label for="email">Email</label>
+                            <input name="email" type="email" placeholder="Email..." required>
+                        </div>
+                        <div class="pedido_contacto">
+                            <label for="no_contacto">Teléfono</label>
+                            <input name="no_contacto" type="tel" placeholder="Sin espacios ni guiones...">
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="envio_formulario">
+                    <input type="submit" value="Enviar" onclick="valida_enviar()" class="enviar"> 
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}  
