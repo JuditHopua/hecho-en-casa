@@ -69,8 +69,8 @@
                         <legend>Pizzas</legend>
                         {% for pizza in pizzas %}
                             <div class="pedido_producto">
-                                <label for="{{pizzas.name}}">{{pizzas.name}}</label>
-                                <input type="number" name="{{pizzas.name}}" id="{{pizzas.id}}" value="0" min="0" max="99" autofocus>
+                                <label for="{{pizza.name}}">{{pizza.name}}</label>
+                                <input type="number" name="{{pizza.name}}" id="{{pizza.id}}" value="0" min="0" max="99" autofocus>
                             </div>
                         {% endfor %}
                     </fieldset>
